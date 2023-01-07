@@ -1,6 +1,7 @@
 header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
   justify-content: flex-start;
+  padding-left: 20px;
 }
 
 header{
@@ -14,11 +15,13 @@ header{
 h2{
   background-color: rgb(0, 57, 71);
   color:white;
+  padding:10px;
 }
 
 a{
   font-size: 26px;
   padding-right: 15px;
+  font-weight: bold;
 }
 
 nav{
@@ -80,4 +83,17 @@ nav{
 
 #logout{
   font-size: 26px;
+  font-weight: bold;
+}
+
+.new-post{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.new-post-button{
+  font-size: 20px;
+  padding: 5px 15px;
 }

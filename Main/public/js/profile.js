@@ -45,3 +45,17 @@ document
 document
   .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
+
+
+  const newPostBtn = document.querySelector('.new-post-button')
+  const addNewPostEl = document.querySelector('.hide')
+  const yourPostsEl = document.querySelector('.shown')
+
+
+
+
+  newPostBtn.addEventListener('click', function(){
+addNewPostEl.style.display = 'block';
+yourPostsEl.style.display = 'none';
+
+  })
