@@ -1,48 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-header, .project:not(:last-child) {
+header,
+.project:not(:last-child) {
   border-bottom: 1px solid #ccc;
   justify-content: flex-start;
   padding-left: 20px;
 }
 
-header{
+header {
   background-color: rgb(0, 57, 71);
 }
 
-.project{
-  border:solid black;
+.project {
+  border: solid black;
 }
 
-.flex-column{
+.flex-column {
   background-image: url('./images/image1.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-h2{
+h2 {
   background-color: rgb(0, 57, 71);
-  color:white;
-  padding:10px;
+  color: white;
+  padding: 10px;
 }
 
-a, #logout{
+a,
+#logout {
   font-size: 26px;
   padding-right: 15px;
   font-weight: bold;
   font-family: 'VT323', monospace;
-  color:white;
+  color: white;
 }
 
-a:hover, #logout:hover{
+a:hover,
+#logout:hover {
   color: rgb(175, 223, 255);
-  text-shadow:2px 2px rgb(0, 0, 0);
+  text-shadow: 2px 2px rgb(0, 0, 0);
   letter-spacing: 2px;
 }
 
-nav{
+nav {
   gap: 200px;
 }
 
@@ -67,29 +70,28 @@ nav{
   margin-left: -5px;
 }
 
-
-.hide{
+.hide {
   display: none;
-  border:solid black;
-  padding:40px;
+  border: solid black;
+  padding: 40px;
 }
 
-.signup-instead{
-  border:none;
+.signup-instead {
+  border: none;
   background-color: white;
   cursor: pointer;
 }
 
-.signup-instead:hover{
+.signup-instead:hover {
   color: #59889e;
 }
 
-.shown{
-  border:solid black;
+.shown {
+  border: solid black;
   padding: 40px;
 }
 
-.site-name{
+.site-name {
   background-color: rgb(0, 57, 71);
   font-size: 36px;
   margin-top: -5px;
@@ -98,95 +100,95 @@ nav{
   font-family: 'Rubik Vinyl', cursive;
 }
 
-.your-dashboard{
+.your-dashboard {
   text-align: center;
   margin-top: 0px;
 }
 
-.main-post-page{
+.main-post-page {
   margin-left: -35px;
 }
 
-.new-post{
+.new-post {
   margin-top: 30px;
   display: flex;
   justify-content: center;
   cursor: pointer;
 }
 
-.btn-danger, .btn{
+.btn-danger,
+.btn {
   cursor: pointer;
 }
 
-h4{
+h4 {
   background-color: rgb(0, 57, 71);
-  color:black;
+  color: black;
   padding-left: 20px;
   border-radius: 10px;
-  
 }
 
-.new-post-button{
+.new-post-button {
   font-size: 20px;
   padding: 5px 15px;
   cursor: pointer;
   margin-bottom: 20px;
 }
 
-.posted-by{
-  text-align:right;
+.posted-by {
+  text-align: right;
   background-color: rgb(238, 238, 238);
   padding-right: 5px;
 }
 
-.text-center{
+.text-center {
   border: solid black;
   padding-bottom: 20px;
 }
 
-.post-description{
+.post-description {
   margin-top: 30px;
 }
 
-.comment{
+.comment {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-
-#comment-box{
+#comment-box {
   width: 50vw;
 }
 
-#comment-box, #post {
+#comment-box,
+#post {
   border-radius: 5px;
 }
-#post:hover{
+#post:hover {
   background-color: rgb(192, 192, 192);
   cursor: pointer;
 }
 
-#post:active{
+#post:active {
   background-color: #858585;
 }
 
-#post{
+#post {
   padding: 5px 30px;
 }
 
-#postContent{
+#postContent {
   width: 50vw;
-  height:150px;
+  height: 150px;
 }
 
-textarea{
-  padding:5px;
+textarea {
+  padding: 5px;
 }
 
-.cowboy{
-  color:black;
+.loginFirst {
+  color: black;
 }
 
-.cowboy:hover{
+.loginFirst:hover {
   color: #b9b9b9;
 }
