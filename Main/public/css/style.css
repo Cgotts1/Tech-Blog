@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
   justify-content: flex-start;
@@ -12,16 +15,31 @@ header{
   border:solid black;
 }
 
+.flex-column{
+  background-image: url('./images/image1.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 h2{
   background-color: rgb(0, 57, 71);
   color:white;
   padding:10px;
 }
 
-a{
+a, #logout{
   font-size: 26px;
   padding-right: 15px;
   font-weight: bold;
+  font-family: 'VT323', monospace;
+  color:white;
+}
+
+a:hover, #logout:hover{
+  color: rgb(175, 223, 255);
+  text-shadow:2px 2px rgb(0, 0, 0);
+  letter-spacing: 2px;
 }
 
 nav{
@@ -62,6 +80,10 @@ nav{
   cursor: pointer;
 }
 
+.signup-instead:hover{
+  color: #59889e;
+}
+
 .shown{
   border:solid black;
   padding: 40px;
@@ -73,17 +95,16 @@ nav{
   margin-top: -5px;
   padding-left: 20px;
   color: white;
+  font-family: 'Rubik Vinyl', cursive;
 }
 
 .your-dashboard{
   text-align: center;
-  /* width: max-content; */
   margin-top: 0px;
 }
 
-#logout{
-  font-size: 26px;
-  font-weight: bold;
+.main-post-page{
+  margin-left: -35px;
 }
 
 .new-post{
@@ -91,6 +112,18 @@ nav{
   display: flex;
   justify-content: center;
   cursor: pointer;
+}
+
+.btn-danger, .btn{
+  cursor: pointer;
+}
+
+h4{
+  background-color: rgb(0, 57, 71);
+  color:black;
+  padding-left: 20px;
+  border-radius: 10px;
+  
 }
 
 .new-post-button{
@@ -102,19 +135,13 @@ nav{
 
 .posted-by{
   text-align:right;
+  background-color: rgb(238, 238, 238);
+  padding-right: 5px;
 }
 
 .text-center{
   border: solid black;
   padding-bottom: 20px;
-}
-
-.p-title{
- 
-}
-
-.post-title{
-  /* text-align: left; */
 }
 
 .post-description{
@@ -145,4 +172,13 @@ nav{
 
 #post{
   padding: 5px 30px;
+}
+
+#postContent{
+  width: 50vw;
+  height:150px;
+}
+
+textarea{
+  padding:5px;
 }
