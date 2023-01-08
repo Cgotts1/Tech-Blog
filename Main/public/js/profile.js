@@ -2,13 +2,12 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#project-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
   const description = document.querySelector('#project-desc').value.trim();
 
-  if (name && needed_funding && description) {
+  if (name && description || needed_funding) {
     const response = await fetch(`/api/projects`, {
       method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
+      body: JSON.stringify({ name, description }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -38,6 +37,17 @@ const delButtonHandler = async (event) => {
   }
 };
 
+const newPostBtn = document.querySelector('.new-post-button')
+const addNewPostEl = document.querySelector('.hide')
+const yourPostsEl = document.querySelector('.shown')
+
+
+
+newPostBtn.addEventListener('click', function(){
+addNewPostEl.style.display = 'block';
+yourPostsEl.style.display = 'none';
+
+})
 document
   .querySelector('.new-project-form')
   .addEventListener('submit', newFormHandler);
@@ -47,15 +57,18 @@ document
   .addEventListener('click', delButtonHandler);
 
 
-  const newPostBtn = document.querySelector('.new-post-button')
-  const addNewPostEl = document.querySelector('.hide')
-  const yourPostsEl = document.querySelector('.shown')
 
 
 
 
-  newPostBtn.addEventListener('click', function(){
-addNewPostEl.style.display = 'block';
-yourPostsEl.style.display = 'none';
 
-  })
+  var post= document.getElementById("post");
+post.addEventListener("click", function(){
+    var commentBoxValue= document.getElementById("comment-box").value;
+ 
+    var li = document.createElement("li");
+    var text = document.createTextNode(commentBoxValue);
+    li.appendChild(text);
+    document.getElementById("unordered").appendChild(li);
+ 
+});

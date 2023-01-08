@@ -96,6 +96,8 @@ nav{
 .new-post-button{
   font-size: 20px;
   padding: 5px 15px;
+  cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .posted-by{
@@ -111,3 +113,36 @@ nav{
  
 }
 
+.post-title{
+  /* text-align: left; */
+}
+
+.post-description{
+  margin-top: 30px;
+}
+
+.comment{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+#comment-box{
+  width: 50vw;
+}
+
+#comment-box, #post {
+  border-radius: 5px;
+}
+#post:hover{
+  background-color: rgb(192, 192, 192);
+  cursor: pointer;
+}
+
+#post:active{
+  background-color: #858585;
+}
+
+#post{
+  padding: 5px 30px;
+}
