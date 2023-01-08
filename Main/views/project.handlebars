@@ -1,3 +1,7 @@
+
+
+{{#if logged_in}}
+
 <div class="text-center">
   <h2 class = "post-title">{{name}}</h2>
   <p class = "post-description">{{description}}</p>
@@ -16,3 +20,19 @@
    </ul>
     <button id="post">Post</button>
 </div>
+        
+        {{else}}
+        {{!-- <div class = "display-flex align-center">
+        <a class = "cowboy" href="/login">Hold on there cowboy! 🤠 You've got to log in first!</a>
+        </div> --}}
+
+        <div class="col-md-5 text-center">
+  <h2 class = "post-title">{{name}}</h2>
+  <p class = "post-description">{{description}}</p>
+  <p><i>Posted by {{user.name}} on {{format_date date_created}}</i></p>
+        <a class = "cowboy" href="/login">Login or Sign Up to reply!</a>
+
+
+</div>
+        {{/if}}
+

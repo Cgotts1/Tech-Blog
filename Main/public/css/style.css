@@ -182,3 +182,11 @@ h4{
 textarea{
   padding:5px;
 }
+
+.cowboy{
+  color:black;
+}
+
+.cowboy:hover{
+  color: #b9b9b9;
+}
