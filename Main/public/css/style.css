@@ -97,3 +97,17 @@ nav{
   font-size: 20px;
   padding: 5px 15px;
 }
+
+.posted-by{
+  text-align:right;
+}
+
+.text-center{
+  border: solid black;
+  padding-bottom: 20px;
+}
+
+.p-title{
+ 
+}
+
