@@ -4,7 +4,7 @@ const newFormHandler = async (event) => {
   const name = document.querySelector('#project-name').value.trim();
   const description = document.querySelector('#project-desc').value.trim();
 
-  if (name && description || needed_funding) {
+  if (name && description) {
     const response = await fetch(`/api/projects`, {
       method: 'POST',
       body: JSON.stringify({ name, description }),
@@ -48,6 +48,9 @@ addNewPostEl.style.display = 'block';
 yourPostsEl.style.display = 'none';
 
 })
+
+
+
 document
   .querySelector('.new-project-form')
   .addEventListener('submit', newFormHandler);
@@ -62,13 +65,13 @@ document
 
 
 
-  var post= document.getElementById("post");
-post.addEventListener("click", function(){
-    var commentBoxValue= document.getElementById("comment-box").value;
+//   var post= document.getElementById("post");
+// post.addEventListener("click", function(){
+//     var commentBoxValue= document.getElementById("comment-box").value;
  
-    var li = document.createElement("li");
-    var text = document.createTextNode(commentBoxValue);
-    li.appendChild(text);
-    document.getElementById("unordered").appendChild(li);
+//     var li = document.createElement("li");
+//     var text = document.createTextNode(commentBoxValue);
+//     li.appendChild(text);
+//     document.getElementById("unordered").appendChild(li);
  
-});
+// });

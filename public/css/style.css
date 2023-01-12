@@ -160,19 +160,19 @@ h4 {
 }
 
 #comment-box,
-#post {
+#comment-btn {
   border-radius: 5px;
 }
-#post:hover {
+#comment-btn:hover {
   background-color: rgb(192, 192, 192);
   cursor: pointer;
 }
 
-#post:active {
+#comment-btn:active {
   background-color: #858585;
 }
 
-#post {
+#comment-btn {
   padding: 5px 30px;
 }
 

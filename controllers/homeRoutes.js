@@ -59,14 +59,67 @@ router.get('/projectUpdate/:id', async (req, res) => {
           attributes: ['name'],
         },
       ],
+
     });
 
     const project = projectData.get({ plain: true });
+    console.log("****")
+    console.log(projectData)
 
     res.render('projectUpdate', {
       ...project,
+      id: projectData.dataValues.id,
       logged_in: req.session.logged_in,
     });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+// This is for the updating of project posts
+router.post('/projectUpdate/:id', async (req, res) => {
+  try {
+    // const projectData = await Project.findByPk(req.params.id, {
+    //   include: [
+    //     {
+    //       model: User,
+    //       attributes: ['name'],
+    //     },
+    //   ],
+
+    // });
+
+    Project.update(                                    //original const updatedProjectDate =
+      { title:req.body.title,                          //original: title:req.body.title,
+    body:req.body.body },                              //original: body:req.body.body
+      { where: { _id: req.params.id } }
+    ) .then(function(rowsUpdated) {
+      res.json(rowsUpdated)
+    })
+    
+
+
+  
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+router.delete('./projectUpdate/:id', withAuth, async (req, res) => {
+  try {
+    const projectData = await Project.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+
+    if (!projectData) {
+      res.status(404).json({ message: 'No project found with this id!' });
+      return;
+    }
+
+    res.status(200).json(projectData);
   } catch (err) {
     res.status(500).json(err);
   }

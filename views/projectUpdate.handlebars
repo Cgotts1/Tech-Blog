@@ -1,0 +1,64 @@
+
+
+<div class='text-center'>
+  <h2>{{name}}</h2>
+  <h2>Edit Post</h2>
+        <p>Title:</p>
+
+  
+  <textarea
+    name='postTitle'
+    id='postTitle'
+    cols='30'
+    rows='1'
+  >{{name}}</textarea>
+  <p class='p-content'>Content:</p>
+  <textarea type= "text" name='postContent' id='postContent'>{{description}}</textarea>
+
+  <p>Hey {{user.name}}! You posted this on: {{format_date date_created}}</p>
+  <p>
+    <button  id = 'update-post' onclick="updatePost()" class='btn btn-primary'>Update Post</button>
+  </p>
+  <div class='display-flex justify-center col-md-12'>
+
+    <button
+    id = "delete-button"
+      class='btn btn-sm btn-danger'
+      data-id='{{id}}'
+    >DELETE</button>
+      
+  </div>
+</div>
+
+
+
+
+
+<script>
+
+
+  async function updatePost(){
+  const id = document.getElementById('delete-button').dataset.id
+  const title = document.querySelector('#postTitle').value.trim();
+  const body = document.querySelector('#postContent').value.trim();
+
+  
+const response = await fetch(`/projectUpdate/${id}`, {
+      method: 'POST',
+      body: JSON.stringify({ title, body }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+debugger
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert(response.statusText);
+    }
+
+  }
+
+
+
+</script>
+

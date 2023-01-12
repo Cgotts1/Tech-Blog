@@ -34,7 +34,7 @@
     <ul id='unordered'>
 
     </ul>
-    <button type='submit' id='post'>Post</button>
+    <button id='comment-btn' onclick="updateComment()" data-id="{{id}}">Post</button>
     {{! </form> }}
   </div>
 
@@ -63,3 +63,32 @@
 
   </div>
 {{/if}}
+
+
+<script>
+
+
+  async function updateComment(){
+  const id = document.getElementById('comment-btn').dataset.id
+  const postComment = document.querySelector('#comment-box').value.trim();
+  
+
+  
+const response = await fetch(`/projectUpdate/${id}`, {
+      method: 'POST',
+      body: JSON.stringify({ postComment}),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+debugger
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert(response.statusText);
+    }
+
+  }
+
+
+
+</script>
