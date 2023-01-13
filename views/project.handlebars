@@ -80,7 +80,7 @@ const response = await fetch(`/projectUpdate/${id}`, {
       headers: { 'Content-Type': 'application/json' },
     });
 
-debugger
+
     if (response.ok) {
       document.location.replace('/profile');
     } else {
