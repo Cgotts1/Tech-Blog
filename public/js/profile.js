@@ -37,19 +37,14 @@ const delButtonHandler = async (event) => {
   }
 };
 
-const newPostBtn = document.querySelector('.new-post-button')
-const addNewPostEl = document.querySelector('.hide')
-const yourPostsEl = document.querySelector('.shown')
+const newPostBtn = document.querySelector('.new-post-button');
+const addNewPostEl = document.querySelector('.hide');
+const yourPostsEl = document.querySelector('.shown');
 
-
-
-newPostBtn.addEventListener('click', function(){
-addNewPostEl.style.display = 'block';
-yourPostsEl.style.display = 'none';
-
-})
-
-
+newPostBtn.addEventListener('click', function () {
+  addNewPostEl.style.display = 'block';
+  yourPostsEl.style.display = 'none';
+});
 
 document
   .querySelector('.new-project-form')
@@ -59,19 +54,13 @@ document
   .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
 
-
-
-
-
-
-
 //   var post= document.getElementById("post");
 // post.addEventListener("click", function(){
 //     var commentBoxValue= document.getElementById("comment-box").value;
- 
+
 //     var li = document.createElement("li");
 //     var text = document.createTextNode(commentBoxValue);
 //     li.appendChild(text);
 //     document.getElementById("unordered").appendChild(li);
- 
+
 // });
