@@ -8,14 +8,6 @@
 
 
 <p>Previous Comments:</p>
-{{#each comments}}
-
-<div class="previous-comment">
-
-  <p class="comment-description">{{comment.description}}</p>
-  <p class="comment-description">{{comment.id}}</p>
-</div>
-{{/each}}
 
 
   <div class='comment text-center'>
@@ -47,12 +39,12 @@
     <ul id='unordered'>
 
     </ul>
+     </form> 
     <button
       id='comment-btn'
       onclick='updateComment()'
       data-id='{{id}}'
     >Post</button>
-     </form> 
   </div>
 
   
@@ -85,21 +77,19 @@ const response = await fetch(`/project/${id}/comment`, {
    // debugger;
     if (response.ok) {
     console.log("----------------")
-    
     console.log(id)
-    console.log(description)
     console.log(body)
     console.log("----------------")
    // document.location.reload();
-   document.location.replace(`/project`);
+  //  document.location.replace(`/project`);
+ // window.location.reload()
     } else {
       alert(response.statusText);
     }
   }
-
 </script>
 {{!------------- JAVASCRIPT FOR COMMENTS ABOVE---------------- --}}
 
 
-{{!-- <script src='./js/comment.js'></script> --}}
+{{!-- <script src='./js/expcodecomment.js'></script> --}}
 {{!-- <script src='./js/profile.js'></script> --}}
