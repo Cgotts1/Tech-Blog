@@ -16,8 +16,8 @@ const response = await fetch(`/project/${id}/comment`, {
     console.log(description)
     console.log(body)
     console.log("----------------")
-    document.location.reload();
-//    document.location.replace(`/project`);
+    // document.location.reload();
+   document.location.replace(`/project`);
     } else {
       alert(response.statusText);
 
