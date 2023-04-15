@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-body{
-  height: 100vh;
-}
-
 header,
 .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
@@ -23,10 +19,6 @@ header {
   margin-left: 10px;
 }
 
-body{
-
-}
-
 .flex-column {
   height: 100vh;
   background-image: url('./images/image1.jpg');
@@ -43,11 +35,12 @@ h2 {
 
 a,
 #logout {
-  font-size: 26px;
+  font-size: 24px;
   padding-right: 15px;
   font-weight: bold;
   font-family: 'VT323', monospace;
   color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 a:hover,
@@ -152,6 +145,7 @@ h4 {
   text-align: right;
   background-color: rgb(238, 238, 238);
   padding-right: 5px;
+  height: 40px;
 }
 
 .text-center {

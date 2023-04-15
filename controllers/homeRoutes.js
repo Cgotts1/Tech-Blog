@@ -92,6 +92,8 @@ router.post('/projectUpdate/:id', async (req, res) => {
   }
 });
 
+// -------------------CREATE COMMENT BELOW-----------------------
+
 router.post('/project/:id/comment', async (req, res) => {
   console.log(req.body.body);
   console.log(req.params.id);
@@ -116,6 +118,20 @@ router.post('/project/:id/comment', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+// --------------------CREATE COMMENT ABOVE------------------------
+// --------------------GET COMMENT BELOW DONT THINK I NEED THISS ONE------------------------
+
+// router.get('/project/:id/comments', async (req, res) => {
+//   const comments = await Comment.findAll({
+//     where: { project_id: req.params.id },
+//     include: [User],
+//   });
+
+//   res.status(200).json(comments);
+// });
+// --------------------GET COMMENT ABOVE------------------------
+
 
 router.delete('./projectUpdate/:id', withAuth, async (req, res) => {
   try {
@@ -166,5 +182,40 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+
+
+
+// Added this below to go to a path
+
+// router.get('/project', async (req, res) => {
+//   try {
+//     const projectData = await Project.findAll({
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['name'],
+//         },
+//       ],
+//     });
+
+//     const projects = projectData.map((project) => project.get({ plain: true }));
+
+//     res.render('projects', {
+//       projects,
+//       logged_in: req.session.logged_in,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+
+
+
+
+
+
+
 
 module.exports = router;

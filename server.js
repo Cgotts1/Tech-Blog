@@ -13,11 +13,12 @@ const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
-
+// Added a 1 to maxage
 const sess = {
   secret: 'Super secret secret',
   cookie: {
-    maxAge: 300000,
+    // maxAge: 300000,
+    maxAge: 900000,
     httpOnly: true,
     secure: false,
     sameSite: 'strict',
