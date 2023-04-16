@@ -47,7 +47,7 @@ User.init(
         return updatedUserData;
       },
     },
-    // Adding this corrected the heroku deployment error (That and adding jawsdb and doing the local sql environment")
+    // Adding this indexes corrected the heroku deployment error (That and adding jawsdb and doing the local sql environment")
     indexes: [
       {
         name: 'idx_user_name',

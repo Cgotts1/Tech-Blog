@@ -25,20 +25,7 @@
       data-id='{{id}}'
     >Update Post</button>
   </p>
-  {{!-- <div class='display-flex justify-center col-md-12'>
-
-    <button
-      id='delete-button'
-      class='btn btn-sm btn-danger'
-      data-id='{{id}}'
-    >DELETE</button>
-
-  </div> --}}
 </div> 
-
-
-  
-
 
 
  <script>
@@ -62,69 +49,3 @@ const response = await fetch(`/projectUpdate/${id}`, {
 </script> 
 
 <script src='./js/profile.js'></script> 
-
-
-
-
-
-
-
-{{!-- <h2 class='your-dashboard'>Your Dashboard</h2>
-
-<div class='display-flex justify-center row mt-4'>
-  <div class='hide col-md-6'>
-    <h3>Create New Post:</h3>
-
-    <form class='form new-project-form'>
-      <div class='form-group'>
-        <label for='project-name'>Title</label>
-        <input
-          class='form-input'
-          type='text'
-          id='project-name'
-          name='project-name'
-        />
-      </div>
-
-      <div class='form-group'>
-        <label for='project-desc'>Content:</label>
-        <textarea
-          class='form-input'
-          id='project-desc'
-          name='project-desc'
-        ></textarea>
-      </div>
-      <div class='form-group'>
-        <button type='submit' class='btn btn-primary'>Create</button>
-      </div>
-    </form>
-  </div>
-
-  {{#if projects.length}}
-    <div class='shown col-md-6 project-list'>
-      <h3>Your Posts:</h3>
-
-      {{#each projects as |project|}}
-        <div class='row mb-2'>
-          <div class='col-md-8'>
-            <h4><a
-                href='/projectUpdate/{{project.id}}'
-              >{{project.name}}</a></h4>
-          </div>
-          <div class='col-md-4'>
-            <button
-              class='btn btn-sm btn-danger'
-              data-id='{{project.id}}'
-            >DELETE</button>
-          </div>
-        </div>
-      {{/each}}
-    </div>
-  {{/if}}
-
-</div>
-
-<div class='new-post'>
-  <button class='new-post-button'>+ New Post</button>
-</div>
-<script src='./js/profile.js'></script> --}}
