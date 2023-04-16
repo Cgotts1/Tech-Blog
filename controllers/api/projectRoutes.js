@@ -2,9 +2,7 @@ const router = require('express').Router();
 const { Project } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-
 // ROUTES FOR CREATING/DELETING POSTS
-
 router.post('/', withAuth, async (req, res) => {
   try {
     const newProject = await Project.create({
@@ -31,7 +29,6 @@ router.delete('/:id', withAuth, async (req, res) => {
       res.status(404).json({ message: 'No project found with this id!' });
       return;
     }
-
     res.status(200).json(projectData);
   } catch (err) {
     res.status(500).json(err);

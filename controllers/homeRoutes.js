@@ -46,7 +46,8 @@ router.get('/project/:id/', async (req, res) => {
     res.render('project', {
       ...project,
       logged_in: req.session.logged_in,
-      user_id:req.session.user_id
+      user_id:req.session.user_id,
+      
     });
   } catch (err) {
     res.status(500).json(err);
@@ -101,26 +102,37 @@ router.post('/project/:id/comment', async (req, res) => {
   console.log(req.body.body);
   console.log(req.params.id);
   console.log(req.session.user_id)
-  const newComment0 = await Comment.create({
-    description: req.body.body,
-    user_id: req.session.user_id,
-    project_id: req.params.id
-  });
-  console.log(newComment0)
-  try {
-    const newComment = await Comment.create({
-      description: req.body.body,
-      user_id: req.session.user_id,
-      project_id: req.params.id
-    });
+  console.log(req.session.logged_in);
+  // console.log(req.params.name)
+  // console.log(req.params.user.name)
 
+  try {
+        const newComment = await Comment.create({
+          
+          include: [
+            {
+              model: User,
+              attributes: ['name'],
+            },
+          ],
+          description: req.body.body,
+          user_id: req.session.user_id,
+          project_id: req.params.id,
+          date_created: new Date(), 
+
+      username: User.name
+
+    });
+    
     res.status(200).json(newComment);
   } catch (err) {
     console.log(err)
-  
+    
     res.status(400).json(err);
   }
 });
+
+
 
 // --------------------CREATE COMMENT ABOVE------------------------
 // --------------------GET COMMENT BELOW DONT THINK I NEED THISS ONE------------------------

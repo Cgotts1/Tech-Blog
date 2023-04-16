@@ -6,8 +6,23 @@
     <p><i>Posted by {{user.name}} on {{format_date date_created}}</i></p>
   </div>
 
+<br>
+<h3>Previous Comments:</h3>
+<div class="previous-comment">
+{{#each comments}}
 
-<p>Previous Comments:</p>
+
+    {{!-- <h2 class='po'>{{username}}</h2> --}}
+<div class="comment-container">
+
+  <p class="comment-description">{{description}}</p>
+  <p class="comment-description"><i>Posted by {{username}} on {{format_date date_created}}</i></p>
+
+  {{!-- <p class="comment-description">{{id}}</p> --}}
+  </div>
+
+{{/each}}
+</div>
 
 
   <div class='comment text-center'>
@@ -67,7 +82,6 @@
   async function updateComment(){
   const id = document.getElementById('comment-btn').dataset.id
   const body = document.querySelector('#comment-box').value.trim();
-
   
 const response = await fetch(`/project/${id}/comment`, {
       method: 'POST',
@@ -80,9 +94,7 @@ const response = await fetch(`/project/${id}/comment`, {
     console.log(id)
     console.log(body)
     console.log("----------------")
-   // document.location.reload();
-  //  document.location.replace(`/project`);
- // window.location.reload()
+  window.location.reload()
     } else {
       alert(response.statusText);
     }

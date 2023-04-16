@@ -143,7 +143,7 @@ h4 {
 
 .posted-by {
   text-align: right;
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(238, 238, 238, 0.9);
   padding-right: 5px;
   height: 40px;
 }
@@ -181,6 +181,52 @@ h4 {
 
 #comment-btn {
   padding: 5px 30px;
+}
+
+.previous-comment{
+  border: solid black;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  max-height: 35%;
+  overflow-y: scroll;
+}
+
+.comment-container{
+  display: flex;
+  border: solid rgb(133, 133, 133) 1px;
+  width: 90%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.835);
+}
+
+body{
+  /* background-color: rgb(209, 209, 209); */
+  background: linear-gradient(#d7d7d7, #b3b3b3, grey);
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(181, 181, 181, 0.9); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 84, 126, 0.8);
 }
 
 #postContent {
