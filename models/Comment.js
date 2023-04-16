@@ -51,11 +51,6 @@ Comment.init(
   }
 );
 
-// Comment.belongsTo(User, {
-//   foreignKey: 'user_id',
-//   onDelete: 'CASCADE'
-// });
-
 module.exports = Comment;
 
 

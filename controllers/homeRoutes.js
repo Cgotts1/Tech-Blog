@@ -103,26 +103,46 @@ router.post('/project/:id/comment', async (req, res) => {
   console.log(req.params.id);
   console.log(req.session.user_id)
   console.log(req.session.logged_in);
-  // console.log(req.params.name)
-  // console.log(req.params.user.name)
+  // console.log(username)
+  
 
   try {
-        const newComment = await Comment.create({
-          
-          include: [
-            {
-              model: User,
-              attributes: ['name'],
-            },
-          ],
-          description: req.body.body,
-          user_id: req.session.user_id,
-          project_id: req.params.id,
-          date_created: new Date(), 
 
-      username: User.name
 
+    const user = await User.findByPk(req.session.user_id);
+    const newComment = await Comment.create({
+      description: req.body.body,
+      user_id: req.session.user_id,
+      project_id: req.params.id,
+      date_created: new Date(),
+      username: user.name,
     });
+
+
+
+
+
+
+
+
+
+
+    //     const newComment = await Comment.create({
+          
+    //       include: [
+    //         {
+    //           model: User,
+    //           attributes: ['name'],
+    //         },
+    //       ],
+    //       description: req.body.body,
+    //       user_id: req.session.user_id,
+    //       project_id: req.params.id,
+    //       date_created: new Date(), 
+    //       username: User.name,
+    //       name:req.body.name,
+
+    // });
     
     res.status(200).json(newComment);
   } catch (err) {
@@ -131,6 +151,10 @@ router.post('/project/:id/comment', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+
+
+
 
 
 
