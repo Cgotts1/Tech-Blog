@@ -47,6 +47,12 @@ User.init(
         return updatedUserData;
       },
     },
+    indexes: [
+      {
+        name: 'idx_user_name',
+        fields: ['name']
+      }
+    ],
     sequelize,
     timestamps: false,
     freezeTableName: true,
